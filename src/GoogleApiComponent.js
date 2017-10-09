@@ -51,7 +51,7 @@ export const wrapper = (options) => (WrappedComponent) => {
         render() {
             const props = Object.assign({}, this.props, {
                 loaded: this.state.loaded,
-                google: window.google
+                google: typeof window !== 'undefined' ? window.google : null
             });
 
             return (

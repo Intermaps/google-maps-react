@@ -38,7 +38,7 @@
             };
 
             Cache._scriptTag = function (key, src) {
-                if (!scriptMap.has(key)) {
+                if (!scriptMap.has(key) && typeof document !== 'undefined') {
                     var tag = document.createElement('script');
                     var promise = new Promise(function (resolve, reject) {
                         var resolved = false,
